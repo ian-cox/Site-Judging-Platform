@@ -5,6 +5,25 @@ fields:
   title:
     label: Title
     type:  text
-  text:
-    label: Text
-    type:  textarea
+fields:
+  sites:
+    label: Sites
+    type: structure
+    entry: >
+      <span style="font-size: 22px;"><strong>{{team}}:</strong> {{sitetitle}}</span>
+    fields:
+      team:
+        label: Team Name
+        type: text
+        required: true
+      sitetitle:
+        label: Site Title
+        type: text
+        required: true
+      before:
+        label: Before
+        type: url
+      after:
+        label: After
+        type: url
+        required: true
