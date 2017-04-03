@@ -3,8 +3,8 @@
 function allowEmbed($url) {
     $header = @get_headers($url, 1);
     if (!$header) return false;
-    elseif (isset($header['X-Frame-Options']) && (stripos($header['X-Frame-Options'], 'SAMEORIGIN') !== false || stripos($header['X-Frame-Options'], 'deny') !== false)) {
-        return false;}
+    elseif (isset($header['X-Frame-Options'])) {
+      return false;}
     return true;
 }
 
@@ -40,8 +40,8 @@ if(param()):
 
   //Build Before and After Switch
   if(param('before')):
-    $toggle_url = $current_url;
     $iframe_src = $data[$current_key]->before->value;
+    $toggle_url = $current_url;
   else:
     $iframe_src = $data[$current_key]->after->value;
     $toggle_url = $before_url;
@@ -55,12 +55,10 @@ if(isset($current_key)):
   $team = $data[$current_key]->team->value;
   $sitetitle = $data[$current_key]->sitetitle->value;
 else:
-  $team = "48in48";
-  $sitetitle = "Welcome";
+  $team = $site->title()->html();
+  $sitetitle = $page->title()->html();
 endif;
 ?>
-
-
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <header class="mdl-layout__header">
@@ -145,7 +143,7 @@ endif;
           <div class="information">
             <div class="mdl-card mdl-shadow--2dp">
                 <div class="card-content">
-                <h2>Welcome</h2>
+                <h2><?php echo $page->title()->html() ?></h2>
                 <?php if($page->sites()->exists()): ?>
                 <p>
                 Use the navigation arrows on the right to view each site. Alternatively, jump to a specific site by selecting it from the menu on the left. Click compare to toggle between the old and new site design.
