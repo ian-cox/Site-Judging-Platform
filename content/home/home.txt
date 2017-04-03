@@ -9,3 +9,8 @@ Sites:
   sitetitle: Beyond Site
   before: http://bynd.com/work
   after: http://bynd.com/
+- 
+  team: Ian Cox
+  sitetitle: Portfolio
+  before: http://iancox.com
+  after: http://iancox.com/portfolio
