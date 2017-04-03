@@ -18,7 +18,7 @@
             <?php if(count($pages->visible()) > 0):?>
             <ul>
               <?php foreach($pages->visible() as $item): ?>
-              <li><a href="<?php echo $item->url() ?>"><?php echo html($item->title()) ?></li>
+              <li><a href="<?php echo $item->url() ?>"><?php echo html($item->title()) ?></a></li>
               <?php endforeach ?>
             </ul>
           <?php else: ?>
