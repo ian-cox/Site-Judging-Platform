@@ -5,7 +5,12 @@ Title: Boston 2017
 Sites: 
 
 - 
-  team: TEST
-  sitetitle: TEST
-  before: http://google.com
-  after: http://iancox.com
+  team: Ian Cox
+  sitetitle: Portfolio
+  before: http://iancox.com
+  after: http://iancox.com/portfolio
+- 
+  team: Team Beyond
+  sitetitle: Beyond Site
+  before: http://bynd.com/work
+  after: http://bynd.com/
