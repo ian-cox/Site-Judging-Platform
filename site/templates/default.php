@@ -65,8 +65,11 @@ endif;
 
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
+        
+        <?php if($page->sites()->exists()): ?>
+          <div disabled aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button js-toggleNav"><i class="material-icons">menu</i></div>
+        <?php endif ?>
 
-        <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button js-toggleNav"><i class="material-icons">menu</i></div>
         <div class="mdl-layout__obfuscator js-toggleNav"></div>
           <!-- Title -->
           <span class="mdl-layout-title"><?php echo $team." — ".$sitetitle?>
@@ -86,7 +89,7 @@ endif;
               <?php if(isset($prev_url)): ?>
                 <a class="mdl-button mdl-button--icon" href="<?php echo $prev_url?>"><i class="material-icons"> arrow_back</i>  </a>
               <?php else: ?>
-                <a class="mdl-button mdl-button--icon" href="<?php echo $page->url()?>"><i class="material-icons">arrow_back</  i></a>
+                <a class="mdl-button mdl-button--icon" href="<?php echo $page->url()?>"><i class="material-icons">arrow_back</i></a>
               <?php endif?>
     
               <?php if(isset($next_url)): ?>
@@ -97,8 +100,11 @@ endif;
           
           <?php else: ?>
             <a disabled class="mdl-button mdl-button--icon"><i class="material-icons">arrow_back</i></a>
-            
-            <a class="mdl-button mdl-button--icon" href="<?php //echo $page->url()."/site:".urlencode($page->sites()->toStructure()->first()->sitetitle())?>"><i class="material-icons"> arrow_forward</i></a>
+            <?php if($page->sites()->exists()): ?>
+              <a class="mdl-button mdl-button--icon" href="<?php echo $page->url()."/site:".urlencode($page->sites()->toStructure()->first()->sitetitle())?>"><i class="material-icons"> arrow_forward</i></a>
+            <?php else: ?>
+              <a disabled class="mdl-button mdl-button--icon"><i class="material-icons">arrow_forwards</i></a>  
+            <?php endif ?>
             
           <?php endif?>
           
