@@ -1,0 +1,11 @@
+Title: Boston 2017
+
+----
+
+Sites: 
+
+- 
+  team: TEST
+  sitetitle: TEST
+  before: http://google.com
+  after: http://iancox.com

@@ -1,0 +1,16 @@
+Title: New York 2016
+
+----
+
+Sites: 
+
+- 
+  team: Team Beyond
+  sitetitle: Beyond Site
+  before: http://bynd.com/work
+  after: http://bynd.com/
+- 
+  team: Ian Cox
+  sitetitle: Portfolio
+  before: http://iancox.com
+  after: http://iancox.com/portfolio
