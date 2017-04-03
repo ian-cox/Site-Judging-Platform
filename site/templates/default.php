@@ -79,25 +79,27 @@ endif;
 
           <?php if(param()): ?>
 
-            <?php if(!empty($data[$current_key]->before->value)):?>
-              <a class="mdl-button" href="<?php echo $toggle_url?>">Compare</a>
-            <?php endif ?>
-
-            <?php if(isset($prev_url)): ?>
-              <a class="mdl-button mdl-button--icon" href="<?php echo $prev_url?>"><i class="material-icons"> arrow_back</i></a>
-            <?php else: ?>
-              <a class="mdl-button mdl-button--icon" href="<?php echo $page->url()?>"><i class="material-icons">arrow_back</i></a>
-            <?php endif?>
+              <?php if(!empty($data[$current_key]->before->value)):?>
+                <a class="mdl-button" href="<?php echo $toggle_url?>">Compare</a>
+              <?php endif ?>
   
-            <?php if(isset($next_url)): ?>
-              <a class="mdl-button mdl-button--icon" href="<?php echo $next_url?>"><i class="material-icons"> arrow_forward</i></a>
-            <?php else: ?>
-              <a disabled class="mdl-button mdl-button--icon"><i class="material-icons">arrow_forward</i></a>
-            <?php endif?>
+              <?php if(isset($prev_url)): ?>
+                <a class="mdl-button mdl-button--icon" href="<?php echo $prev_url?>"><i class="material-icons"> arrow_back</i>  </a>
+              <?php else: ?>
+                <a class="mdl-button mdl-button--icon" href="<?php echo $page->url()?>"><i class="material-icons">arrow_back</  i></a>
+              <?php endif?>
+    
+              <?php if(isset($next_url)): ?>
+                <a class="mdl-button mdl-button--icon" href="<?php echo $next_url?>"><i class="material-icons"> arrow_forward </i></a>
+              <?php else: ?>
+                <a disabled class="mdl-button mdl-button--icon"><i class="material-icons">arrow_forward</i></a>
+              <?php endif?>
           
           <?php else: ?>
             <a disabled class="mdl-button mdl-button--icon"><i class="material-icons">arrow_back</i></a>
-            <a class="mdl-button mdl-button--icon" href="<?php echo $page->url()."/site:".urlencode($page->sites()->toStructure()->first()->sitetitle())?>"><i class="material-icons"> arrow_forward</i></a>
+            
+            <a class="mdl-button mdl-button--icon" href="<?php //echo $page->url()."/site:".urlencode($page->sites()->toStructure()->first()->sitetitle())?>"><i class="material-icons"> arrow_forward</i></a>
+            
           <?php endif?>
           
           </nav>
@@ -138,10 +140,15 @@ endif;
             <div class="mdl-card mdl-shadow--2dp">
                 <div class="card-content">
                 <h2>Welcome</h2>
+                <?php if($page->sites()->exists()): ?>
                 <p>
                 Use the navigation arrows on the right to view each site. Alternatively, jump to a specific site by selecting it from the menu on the left. Click compare to toggle between the old and new site design.
                 </p>
-                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="<?php echo $page->url()."/site:".urlencode($page->sites()->toStructure()->first()->sitetitle())?>">Get Started</a>
+                  <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="<?php echo $page->url()."/site:".urlencode($page->sites()->toStructure()->first()->sitetitle())?>">Get Started</a>
+                <?php else: ?>
+                <p>No websites have been added to the judging platform yet.</p>
+                  <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="<?php echo $site->url()."/panel"?>">Login</a>
+                <?php endif ?>
               </div>
             </div>
           </div>
