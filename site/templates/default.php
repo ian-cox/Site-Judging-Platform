@@ -98,7 +98,8 @@ endif;
           
           <?php else: ?>
             <a disabled class="mdl-button mdl-button--icon"><i class="material-icons">arrow_back</i></a>
-            <?php if($page->sites()->exists()): ?>
+
+            <?php if(!$page->sites()->isEmpty()): ?>
               <a class="mdl-button mdl-button--icon" href="<?php echo $page->url()."/site:".urlencode($page->sites()->toStructure()->first()->sitetitle())?>"><i class="material-icons"> arrow_forward</i></a>
             <?php else: ?>
               <a disabled class="mdl-button mdl-button--icon"><i class="material-icons">arrow_forwards</i></a>  
@@ -144,7 +145,7 @@ endif;
             <div class="mdl-card mdl-shadow--2dp">
                 <div class="card-content">
                 <h2><?php echo $page->title()->html() ?></h2>
-                <?php if($page->sites()->exists()): ?>
+                <?php if(!$page->sites()->isEmpty()): ?>
                 <p>
                 Use the navigation arrows on the right to view each site. Alternatively, jump to a specific site by selecting it from the menu on the left. Click compare to toggle between the old and new site design.
                 </p>
