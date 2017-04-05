@@ -3,7 +3,7 @@
 This judging platform is built on Kirby CMS
 Kirby is a file-based CMS.
 
-## Trial
+## Trial of Kirby CMS
 
 You can try Kirby on your local machine or on a test
 server as long as you need to make sure it is the right
