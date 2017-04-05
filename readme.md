@@ -1,13 +1,13 @@
-# Kirby
+# Site Judging Platform
 
+This judging platform is built on Kirby CMS
 Kirby is a file-based CMS.
-Easy to setup. Easy to use. Flexible as hell.
 
 ## Trial
 
 You can try Kirby on your local machine or on a test
 server as long as you need to make sure it is the right
-tool for your next project.
+tool for your project.
 
 ## Buy a license
 
@@ -16,12 +16,6 @@ You can purchase your Kirby license at
 
 A Kirby license is valid for a single domain. You can find 
 Kirby's license agreement here: <http://getkirby.com/license>
-
-## The Plainkit
-
-Kirby's Plainkit is the most minimal setup you can get started with.
-It does not include any content, styles or other kinds of decoration, 
-so it's perfect to use this as a starting point for your own project.
 
 ## The Panel
 
